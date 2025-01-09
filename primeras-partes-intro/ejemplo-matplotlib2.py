@@ -1,5 +1,7 @@
 import pandas as pd
+import numpy as np
 import matplotlib.pyplot as plt
+import os
 
 # graficas de pastel (pie chart)
 # datos para el grafico de pastel
@@ -47,3 +49,24 @@ plt.title("relacion entre salario y edad")
 plt.xlabel("SALARIO")
 plt.ylabel("EDAD")
 plt.show()
+
+# guardamos el grafico generado en el disco local(sin necesidad de google drive)
+x = np.random.rand(100)  # 100 valores aleatorios para el eje X
+y = np.random.rand(100)
+
+output_dir = "img"
+os.makedirs(output_dir, exist_ok=True)
+
+plt.plot(x, np.sin(x), label="Seno", color="blue")
+plt.plot(x, np.cos(x), label="coseno", color="red")
+plt.title("Funciones trigonometricas")
+plt.xlabel("Angulo en radianes")
+plt.ylabel("Valor de la funcion")
+plt.legend()
+
+plt.grid(True)
+# guardamos el grafico como img PNG en el entorno local
+plt.savefig(os.path.join(output_dir, "funciones_trigonometricas.png"))
+plt.show()
+# mensaje de confirmacion
+print("el grafico se ha guardado correctamente en la ruta indicada.")
