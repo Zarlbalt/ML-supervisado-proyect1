@@ -57,3 +57,20 @@ plt.title("grafico de dispersion aleatorio")  # titulo del grafico
 plt.xlabel("variable x")  # etiqueta del eje X
 plt.ylabel("Variable y")  # etiqueta del eje y
 plt.show()
+
+
+# graficos de varias lineas con diferentes estilos
+plt.plot(x, np.sin(x), linestyle="-", label="seno")  # linea continua
+plt.plot(x, np.cos(x), linestyle="--", label="coseno")  # linea descontinua
+plt.plot(x, np.tan(x), linestyle=":", label="tangente")  # linea punteada
+plt.title(
+    "Funciones trigonometricas con diferentes estilos de linea"
+)  # titulo del grafico
+plt.xlabel("Angulo de radianes")  # etiqueta del eje X
+plt.ylabel("Valor de la funcion")  # etiqueta del eje y
+plt.legend()  # muestra la leyenda
+plt.ylim(
+    0, 1.6
+)  # lmitamos el rango de valores para evitar valores extremadamente altos
+plt.xlim(0, 1)
+plt.show()
